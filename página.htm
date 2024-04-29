@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+    <link rel="stylesheet" href="página.css">
+    <script>
+        function mostrarIdentificadorDispositivo() {
+            // Gera um identificador único baseado no timestamp
+            var uuid = Date.now().toString(36) + Math.random().toString(36).substr(2);
+            
+            // Exibe o identificador no console
+            console.log("Identificador do dispositivo: " + uuid);
+
+            // Chama a função do Android para salvar o identificador
+            Android.saveDeviceIdentifier(uuid);
+        }
+    </script>
+</head>
+<body>
+<div style="margin-top: 40px; width: 100%;height: auto; display: flex;flex-direction: column;align-items: center; position: absolute;border: auto; top:0px;bottom: 0px; left: 0px; right: 0px;">
+<hgroup class="titulos_textos">
+    <h1 id="titulo_principal">Barbearia Garage Retrô</h1>
+</hgroup>
+<picture style="margin-top:22px ; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <img class="logo" src="logo.png">
+</picture>
+<form id="form" action="">
+    <label style="margin-top: 12px;margin-bottom: 0px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"><i>Digite o seu nome</i></label><br>
+    <input class="entrada" type="text" placeholder="Ex: Isaque Samir Bezerra">
+    <button id="botao" onclick="mostrarIdentificadorDispositivo()"><i>Cadastrar</i></button>
+</form>
+<button style=" top:180%; margin: auto; left: 0px; right: 0px; width: 200px;" onclick="cha()">Reporte</button>
+<script>
+function cha(){
+    open("automatico.html", "_self");
+
+}
+</script>
+</div>
+</body>
+</html>

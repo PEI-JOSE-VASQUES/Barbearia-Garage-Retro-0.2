@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+    <link rel="stylesheet" href="página.css">
+    <script>
+        function mostrarIdentificadorArmazenado() {
+            // Recupera o identificador armazenado
+            var deviceIdentifier = localStorage.getItem("deviceIdentifier");
+            
+            // Verifica se o identificador existe
+            if (deviceIdentifier) {
+                // Exibe o identificador em um alerta
+                alert("Identificador do dispositivo: " + deviceIdentifier);
+            } else {
+                // Se o identificador não existir, exibe uma mensagem de erro
+                alert("Identificador do dispositivo não encontrado.");
+            }
+        }
+    </script>
+</head>
+<body>
+<div style="margin-top: 40px; width: 100%;height: auto; display: flex;flex-direction: column;align-items: center; position: absolute;border: auto; top:0px;bottom: 0px; left: 0px; right: 0px;">
+<hgroup class="titulos_textos">
+    <h1 id="titulo_principal">Barbearia Garage Retrô</h1>
+</hgroup>
+<picture style="margin-top:22px ; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <img class="logo" src="logo.png">
+</picture>
+<form id="form" action="">
+    <label style="margin-top: 12px;margin-bottom: 0px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"><i>Olá cliente! Seja bem vindo</i></label><br>
+    <button id="botao" onclick="mostrarIdentificadorArmazenado()"><i>Entrar</i></button>
+</form>
+<button style=" top:180%; margin: auto; left: 0px; right: 0px; width: 200px;">Reporte</button>
+</div>
+</body>
+</html>
